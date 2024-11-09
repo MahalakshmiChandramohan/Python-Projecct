@@ -1,0 +1,35 @@
+import time
+import random
+def get_sentence():
+    sentences=[
+        "The quick brown fox jumps over the lazy dog.",
+        "A journey of a thousand miles begins with a single step.",
+        "To be or not to be,this is the question.",
+        "All the glitters is not gold.",
+        "A picture is worth a thousand words."
+        ]
+    return random.choice(sentences)
+        
+def speed_typing_test():
+    sentences=get_sentence()
+    print("Type this sentence as fast as you can:")
+    print(sentences)
+    print()
+    
+    input("Press ENTER when you are ready to start...")
+    
+    start_time = time.time()
+    user_input = input("Type the sentence: ")
+    end_time = time.time()
+    
+    time_taken = end_time - start_time
+    words_typed = len(user_input.split())
+    words_per_minute = (words_typed / time_taken) * 60
+    time_per_word = (time_taken / words_typed)
+    
+    print(f"Time taken: {time_taken:.2f} seconds")
+    print(f"Words typed: {words_typed}")
+    print(f"Words per minute: {words_per_minute:.2f}")
+    print(f"Time taken for one word: {time_per_word:.2f} seconds")
+
+speed_typing_test()
